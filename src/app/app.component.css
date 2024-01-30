@@ -1,3 +1,13 @@
-button .p-button-label {
+/* button .p-button-label {
   font-size: 40px;
+} */
+
+:host ::ng-deep li a{
+list-style: none !important;
+text-decoration: none;
+margin-bottom: 1px;
+ }
+ .container{
+  font-weight: 300;
+  font-size: small;
 }

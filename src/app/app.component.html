@@ -21,8 +21,8 @@
 <div class="container bg-body-secondary rounded mt-5 p-2">
   <div class="row p-2 mt-3">
     <div class="col-2">
-      <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
-        <ng-template pTemplate="headless">
+      <p-sidebar #sidebarRef styleClass="w-15rem"  [(visible)]="sidebarVisible">
+        <ng-template class="font-light  pb-0 mb-4" pTemplate="headless">
           <div class="flex flex-column h-full">
             <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0">
               <span class="inline-flex align-items-center gap-2">
@@ -67,11 +67,11 @@
                   <path d="M11.4013 8.27235L8.00893 7.94938L10.2705 5.68861H12.5321L11.4013 8.27235Z"
                     fill="var(--primary-color-text)" />
                 </svg>
-                <span class="font-semibold text-2xl text-primary">Your Logo</span>
+                <span class="font-light text-2xl text-primary">Your Logo</span>
               </span>
               <span>
-                <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times"
-                  styleClass="h-2rem w-2rem"></p-button>
+                <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" [rounded]="true"
+                  [outlined]="true" styleClass="h-2rem w-2rem"></p-button>
               </span>
             </div>
             <div class="overflow-y-auto">
@@ -88,7 +88,7 @@
                       <a pRipple
                         class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                         <i class="pi pi-home mr-2"></i>
-                        <span class="font-medium"></span>
+                        <span class="font-medium">Dashboard</span>
                       </a>
                     </li>
                     <li>
@@ -212,7 +212,7 @@
               </ul>
             </div>
             <div class="mt-auto">
-              <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+              <hr class="mb-3 mx-3 mb-3 mx-3">
               <a pRipple
                 class="m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                 <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
@@ -292,19 +292,23 @@
     </div>
   </div>
 </div>
-
-
-
 <div class="container bg-info-subtle mt-5 p-2">
   <div class="row">
     <div class="col-2">
       <button pButton label="Toggle p-disabled" pStyleClass="@next" toggleClass="p-disabled"></button>
     </div>
-    <div class="col-10">
+    <div class="col-3">
 
       <div class="card">
-        <p-tabMenu [model]="items"></p-tabMenu>
+        <button pButton pRipple label="Submit" type="button" class="p-button-success"></button>
       </div>
+    </div>
+    <div class="col-3">
+      <p-dropdown>
+        <ng-template pTemplate="dropdownicon">
+          <i class="fa-light fa-chevron-down"></i>
+        </ng-template>
+      </p-dropdown>
     </div>
   </div>
 </div>

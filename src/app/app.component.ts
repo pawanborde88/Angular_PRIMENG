@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
+import { Button, ButtonModule } from 'primeng/button';
 import { ConfirmPopup } from 'primeng/confirmpopup';
 import { Sidebar } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent  implements OnInit{
   title = 'primenng';
