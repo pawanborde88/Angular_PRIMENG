@@ -20,7 +20,7 @@ import { ToastModule } from 'primeng/toast';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
 import {StyleClassModule} from 'primeng/styleclass';
-
+import { TabMenuModule } from 'primeng/tabmenu';
 @NgModule({
   declarations: [
     AppComponent
@@ -44,7 +44,8 @@ import {StyleClassModule} from 'primeng/styleclass';
     ToastModule,
     OverlayPanelModule,
     DialogModule,
-    StyleClassModule
+    StyleClassModule,
+    TabMenuModule
 
   ],
   providers: [MessageService,ConfirmationService,

@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { ConfirmPopup } from 'primeng/confirmpopup';
 import { Sidebar } from 'primeng/sidebar';
 
@@ -8,7 +8,7 @@ import { Sidebar } from 'primeng/sidebar';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent  implements OnInit{
   title = 'primenng';
   date: Date | undefined;
   sidebarVisible: boolean = false;
@@ -17,6 +17,10 @@ export class AppComponent {
 
   @ViewChild(ConfirmPopup) confirmPopup!: ConfirmPopup;
 styleClass: any;
+  progress: number=0;
+  items: MenuItem[] | undefined;
+  interval = null;
+  cdr: any;
   closeCallback(e: Event): void {
     this.sidebarRef.close(e);
 }
@@ -29,6 +33,15 @@ reject() {
   this.confirmPopup.reject();
 }
 constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
+  ngOnInit(): void {
+    this.items = [
+      { label: 'Home', icon: 'pi pi-fw pi-home' },
+      { label: 'Calendar', icon: 'pi pi-fw pi-calendar' },
+      { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
+      { label: 'Documentation', icon: 'pi pi-fw pi-file' },
+      { label: 'Settings', icon: 'pi pi-fw pi-cog' }
+  ];
+  }
 confirm1(event: Event) {
   this.confirmationService.confirm({
       target: event.target as EventTarget,

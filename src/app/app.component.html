@@ -1,13 +1,14 @@
 <div class="container bg-success-subtle rounded mt-5 p-2 ">
   <div class="row">
-       <div class="col-2">
+    <div class="col-2">
       <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date"></p-calendar>
     </div>
     <div class="col-2">
       <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date" [showButtonBar]="true"></p-calendar>
     </div>
     <div class="col-2">
-      <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date" view="month" dateFormat="mm/yy" [readonlyInput]="true"></p-calendar>
+      <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date" view="month" dateFormat="mm/yy"
+        [readonlyInput]="true"></p-calendar>
     </div>
     <div class="col-2">
       <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date" [numberOfMonths]="3"></p-calendar>
@@ -16,7 +17,7 @@
       <p-calendar [style]="{width: '10vw'}" [(ngModel)]="date" [touchUI]="true" [readonlyInput]="true"></p-calendar>
     </div>
   </div>
-  </div>
+</div>
 <div class="container bg-body-secondary rounded mt-5 p-2">
   <div class="row p-2 mt-3">
     <div class="col-2">
@@ -272,22 +273,38 @@
       </p-dialog>
     </div>
     <div class="col-2">
-      <p-button  label="Submit"></p-button>
+      <p-button label="Submit"></p-button>
     </div>
     <div class="col-2">
       <button type="button" pButton pRipple (click)="showConfirm()" label="Confirm"></button>
       <p-toast position="bottom-center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
         <ng-template let-message pTemplate="message">
-            <div class="flex flex-column align-items-start" style="flex: 1">
-                <div class="flex align-items-center gap-2">
-                    <p-avatar image="https://primefaces.org/cdn/primeng/images/avatar/amyelsner.png" shape="circle" />
-                    <span class="font-bold text-900">Amy Elsner</span>
-                </div>
-                <div class="font-medium text-lg my-3 text-900">{{ message.summary }}</div>
-                <p-button class="p-button-sm" label="Reply" (click)="onConfirm()"></p-button>
+          <div class="flex flex-column align-items-start" style="flex: 1">
+            <div class="flex align-items-center gap-2">
+              <p-avatar image="https://primefaces.org/cdn/primeng/images/avatar/amyelsner.png" shape="circle" />
+              <span class="font-bold text-900">Amy Elsner</span>
             </div>
+            <div class="font-medium text-lg my-3 text-900">{{ message.summary }}</div>
+            <p-button class="p-button-sm" label="Reply" (click)="onConfirm()"></p-button>
+          </div>
         </ng-template>
-    </p-toast>
+      </p-toast>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container bg-info-subtle mt-5 p-2">
+  <div class="row">
+    <div class="col-2">
+      <button pButton label="Toggle p-disabled" pStyleClass="@next" toggleClass="p-disabled"></button>
+    </div>
+    <div class="col-10">
+
+      <div class="card">
+        <p-tabMenu [model]="items"></p-tabMenu>
+      </div>
     </div>
   </div>
 </div>
