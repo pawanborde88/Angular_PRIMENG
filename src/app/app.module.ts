@@ -21,6 +21,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
 import {StyleClassModule} from 'primeng/styleclass';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { DragDropModule } from 'primeng/dragdrop';
 @NgModule({
   declarations: [
     AppComponent
@@ -45,7 +46,9 @@ import { TabMenuModule } from 'primeng/tabmenu';
     OverlayPanelModule,
     DialogModule,
     StyleClassModule,
-    TabMenuModule
+    TabMenuModule,
+    DragDropModule
+
 
   ],
   providers: [MessageService,ConfirmationService,
