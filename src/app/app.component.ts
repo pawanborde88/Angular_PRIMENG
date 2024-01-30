@@ -16,6 +16,7 @@ export class AppComponent {
   @ViewChild('sidebarRef')sidebarRef!: Sidebar;
 
   @ViewChild(ConfirmPopup) confirmPopup!: ConfirmPopup;
+styleClass: any;
   closeCallback(e: Event): void {
     this.sidebarRef.close(e);
 }
@@ -72,5 +73,19 @@ confirmation(){
 showDialog() {
   this.visible = true;
 }
+onConfirm() {
+  this.messageService.clear('confirm');
+  this.visible = false;
+}
 
+onReject() {
+  this.messageService.clear('confirm');
+  this.visible = false;
+}
+showConfirm() {
+  if (!this.visible) {
+      this.messageService.add({ key: 'confirm', sticky: true, severity: 'success', summary: 'Can you send me the report?' });
+      this.visible = true;
+  }
+}
 }
