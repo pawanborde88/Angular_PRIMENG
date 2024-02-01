@@ -19,12 +19,20 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
-import {StyleClassModule} from 'primeng/styleclass';
+import { StyleClassModule} from 'primeng/styleclass';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { DragDropModule } from 'primeng/dragdrop';
+import { CheckboxModule } from 'primeng/checkbox';
+import { BlockUIModule } from 'primeng/blockui';
+import { PanelModule } from 'primeng/panel';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,11 @@ import { DragDropModule } from 'primeng/dragdrop';
     DialogModule,
     StyleClassModule,
     TabMenuModule,
-    DragDropModule
+    DragDropModule,
+    CheckboxModule,
+    RippleModule,
+    BlockUIModule,
+    PanelModule
 
 
   ],
